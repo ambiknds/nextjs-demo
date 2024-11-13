@@ -17,8 +17,8 @@ export default function UserClient() {
     useEffect(() => {
         async function fetchUsers() {
             try{
-                // const response = await fetch("https://jsonplaceholder.typicode.com/users");
-                const response = await fetch("./data.json");
+                const response = await fetch("https://jsonplaceholder.typicode.com/users");
+                // const response = await fetch("./data.json");
                 if (!response.ok) throw new Error("Failed to fetch Users")
                 const data = await response.json()
             console.log(data)
@@ -35,8 +35,8 @@ export default function UserClient() {
             finally{
                 setLoading(false)
             }
-            fetchUsers()
         }
+        fetchUsers()
     }, [])
     return (
         <div>
